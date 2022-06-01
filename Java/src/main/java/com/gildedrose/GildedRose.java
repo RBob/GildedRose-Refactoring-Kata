@@ -68,16 +68,22 @@ class GildedRose {
         GoblinItem goblinItem;
 
         for (Item item : items) {
-            if (item.name.equals("Aged Brie")) {
-                goblinItem = new AgeingItem(1, item);
-            } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                goblinItem = new LegendaryItem(0, 80, item);
-            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                goblinItem = new FastAgeingItem(1, item);
-            } else if (item.name.equals("Conjured Mana Cake")) {
-                goblinItem = new DegradingItem(-2, item);
-            } else {
-                goblinItem = new DegradingItem(-1, item);
+            switch (item.name) {
+                case "Aged Brie":
+                    goblinItem = new AgeingItem(1, item);
+                    break;
+                case "Sulfuras, Hand of Ragnaros":
+                    goblinItem = new LegendaryItem(0, 80, item);
+                    break;
+                case "Backstage passes to a TAFKAL80ETC concert":
+                    goblinItem = new FastAgeingItem(1, item);
+                    break;
+                case "Conjured Mana Cake":
+                    goblinItem = new DegradingItem(-2, item);
+                    break;
+                default:
+                    goblinItem = new DegradingItem(-1, item);
+                    break;
             }
 
             goblinItem.updateQuality();
