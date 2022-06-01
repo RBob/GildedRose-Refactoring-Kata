@@ -46,6 +46,15 @@ class GildedRoseTest {
         assertResults(app.items);
     }
 
+    @Test
+    void updateQualityRefactored2Test() {
+
+        GildedRose app = new GildedRose(items);
+        app.updateQualityRefactored2();
+
+        assertResults(app.items);
+    }
+
     private void assertResults(Item[] items) {
 
         // degrading item

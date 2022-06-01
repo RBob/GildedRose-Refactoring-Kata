@@ -1,6 +1,9 @@
 package com.gildedrose;
 
 import com.gildedrose.refactored1.*;
+import com.gildedrose.refactored2.ElfItem;
+
+import static com.gildedrose.refactored2.ElfItem.*;
 
 class GildedRose {
 
@@ -93,6 +96,33 @@ class GildedRose {
             }
 
             goblinItem.updateQuality();
+        }
+    }
+
+    public void updateQualityRefactored2() {
+
+        ElfItem elfItem;
+
+        for (Item item : items) {
+            switch (item.name) {
+                case "Aged Brie":
+                    elfItem = new ElfItem(1, item, ageingQualityFunction);
+                    break;
+                case "Sulfuras, Hand of Ragnaros":
+                    elfItem = new ElfItem(0, 80, item, nopQualityFunction);
+                    break;
+                case "Backstage passes to a TAFKAL80ETC concert":
+                    elfItem = new ElfItem(1, item, fastAgeingQualityFunction);
+                    break;
+                case "Conjured Mana Cake":
+                    elfItem = new ElfItem(-2, item, degradingQualityFunction);
+                    break;
+                default:
+                    elfItem = new ElfItem(-1, item, degradingQualityFunction);
+                    break;
+            }
+
+            elfItem.updateQuality();
         }
     }
 
