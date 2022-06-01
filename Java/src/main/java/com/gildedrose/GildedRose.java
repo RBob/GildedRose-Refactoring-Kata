@@ -1,6 +1,9 @@
 package com.gildedrose;
 
+import com.gildedrose.refactored1.*;
+
 class GildedRose {
+
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -10,7 +13,7 @@ class GildedRose {
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {
                     if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                         items[i].quality = items[i].quality - 1;
@@ -59,4 +62,26 @@ class GildedRose {
             }
         }
     }
+
+    public void updateQualityRefactored1() {
+
+        GoblinItem goblinItem;
+
+        for (Item item : items) {
+            if (item.name.equals("Aged Brie")) {
+                goblinItem = new AgeingItem(1, item);
+            } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                goblinItem = new LegendaryItem(0, 80, item);
+            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                goblinItem = new FastAgeingItem(1, item);
+            } else if (item.name.equals("Conjured Mana Cake")) {
+                goblinItem = new DegradingItem(-2, item);
+            } else {
+                goblinItem = new DegradingItem(-1, item);
+            }
+
+            goblinItem.updateQuality();
+        }
+    }
+
 }
