@@ -79,12 +79,12 @@ class GildedRoseTest {
         // conjured item
         assertEquals("Conjured Mana Cake", app.items[8].name);
         assertEquals(2, app.items[8].sellIn);
-        assertNotEquals(4, app.items[8].quality);
+        assertEquals(4, app.items[8].quality);
 
         // conjured item
         assertEquals("Conjured Mana Cake", app.items[9].name);
         assertEquals(-2, app.items[9].sellIn);
-        assertNotEquals(2, app.items[9].quality);
+        assertEquals(2, app.items[9].quality);
     }
 
     @Test
