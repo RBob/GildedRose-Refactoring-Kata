@@ -89,12 +89,12 @@ class GildedRoseTest {
         assertEquals(4, items[7].sellIn);
         assertEquals(33, items[7].quality);
 
-        // conjured item
+        // conjured (degrading) item
         assertEquals("Conjured Mana Cake", items[8].name);
         assertEquals(2, items[8].sellIn);
         assertEquals(4, items[8].quality);
 
-        // conjured item
+        // conjured (degrading) item
         assertEquals("Conjured Mana Cake", items[9].name);
         assertEquals(-2, items[9].sellIn);
         assertEquals(2, items[9].quality);
