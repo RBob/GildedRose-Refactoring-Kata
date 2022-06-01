@@ -1,9 +1,8 @@
 package com.gildedrose.refactored2;
 
 import com.gildedrose.Item;
-import com.gildedrose.refactored1.GoblinItem;
 
-public class ElfItem implements GoblinItem {
+public class ElfItem {
 
     static int minQuality = 0;
     int maxQuality = 50;
