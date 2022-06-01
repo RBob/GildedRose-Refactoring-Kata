@@ -35,7 +35,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
 
-        assertResults(app);
+        assertResults(app.items);
     }
 
     @Test
@@ -44,60 +44,60 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQualityRefactored1();
 
-        assertResults(app);
+        assertResults(app.items);
     }
 
-    private void assertResults(GildedRose app) {
+    private void assertResults(Item[] items) {
 
         // degrading item
-        assertEquals("+5 Dexterity Vest", app.items[0].name);
-        assertEquals(9, app.items[0].sellIn);
-        assertEquals(19, app.items[0].quality);
+        assertEquals("+5 Dexterity Vest", items[0].name);
+        assertEquals(9, items[0].sellIn);
+        assertEquals(19, items[0].quality);
 
         // ageing item
-        assertEquals("Aged Brie", app.items[1].name);
-        assertEquals(1, app.items[1].sellIn);
-        assertEquals(1, app.items[1].quality);
+        assertEquals("Aged Brie", items[1].name);
+        assertEquals(1, items[1].sellIn);
+        assertEquals(1, items[1].quality);
 
         // degrading item
-        assertEquals("Elixir of the Mongoose", app.items[2].name);
-        assertEquals(-2, app.items[2].sellIn);
-        assertEquals(5, app.items[2].quality);
+        assertEquals("Elixir of the Mongoose", items[2].name);
+        assertEquals(-2, items[2].sellIn);
+        assertEquals(5, items[2].quality);
 
         // legendary item
-        assertEquals("Sulfuras, Hand of Ragnaros", app.items[3].name);
-        assertEquals(0, app.items[3].sellIn);
-        assertEquals(80, app.items[3].quality);
+        assertEquals("Sulfuras, Hand of Ragnaros", items[3].name);
+        assertEquals(0, items[3].sellIn);
+        assertEquals(80, items[3].quality);
 
         // legendary item
-        assertEquals("Sulfuras, Hand of Ragnaros", app.items[4].name);
-        assertEquals(-1, app.items[4].sellIn);
-        assertEquals(80, app.items[4].quality);
+        assertEquals("Sulfuras, Hand of Ragnaros", items[4].name);
+        assertEquals(-1, items[4].sellIn);
+        assertEquals(80, items[4].quality);
 
         // fast ageing item
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[5].name);
-        assertEquals(14, app.items[5].sellIn);
-        assertEquals(21, app.items[5].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", items[5].name);
+        assertEquals(14, items[5].sellIn);
+        assertEquals(21, items[5].quality);
 
         // fast ageing item
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[6].name);
-        assertEquals(9, app.items[6].sellIn);
-        assertEquals(42, app.items[6].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", items[6].name);
+        assertEquals(9, items[6].sellIn);
+        assertEquals(42, items[6].quality);
 
         // fast ageing item
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[7].name);
-        assertEquals(4, app.items[7].sellIn);
-        assertEquals(33, app.items[7].quality);
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", items[7].name);
+        assertEquals(4, items[7].sellIn);
+        assertEquals(33, items[7].quality);
 
         // conjured item
-        assertEquals("Conjured Mana Cake", app.items[8].name);
-        assertEquals(2, app.items[8].sellIn);
-        assertEquals(4, app.items[8].quality);
+        assertEquals("Conjured Mana Cake", items[8].name);
+        assertEquals(2, items[8].sellIn);
+        assertEquals(4, items[8].quality);
 
         // conjured item
-        assertEquals("Conjured Mana Cake", app.items[9].name);
-        assertEquals(-2, app.items[9].sellIn);
-        assertEquals(2, app.items[9].quality);
+        assertEquals("Conjured Mana Cake", items[9].name);
+        assertEquals(-2, items[9].sellIn);
+        assertEquals(2, items[9].quality);
     }
 
 }
