@@ -15,7 +15,6 @@ class GildedRoseTest {
         new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
         new Item("Backstage passes to a TAFKAL80ETC concert", 10, 40),
         new Item("Backstage passes to a TAFKAL80ETC concert", 5, 30),
-        // this conjured item does not work properly yet
         new Item("Conjured Mana Cake", 3, 6),
         new Item("Conjured Mana Cake", -1, 6)
     };
